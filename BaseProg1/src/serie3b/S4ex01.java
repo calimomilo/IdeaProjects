@@ -1,4 +1,4 @@
-package serie4;
+package serie3b;
 
 public class S4ex01 {
     public static void main(String[] args) {

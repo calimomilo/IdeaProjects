@@ -1,4 +1,4 @@
-package serie4;
+package serie3b;
 
 import ch.comem.Clavier;
 
