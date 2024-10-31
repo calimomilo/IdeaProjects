@@ -21,8 +21,8 @@ public class S4ex09 {
 
         String[][] tableau = new String [max][6];
         for (int i = 1; i <= 6; i++) {
-            for (int j = 0; j < Collections.frequency(list, i); j++) {
-                tableau[max-j-1][i-1] = "X";
+            for (int j = 1; j <= Collections.frequency(list, i); j++) {
+                tableau[max-j][i-1] = "X";
             }
         }
 
