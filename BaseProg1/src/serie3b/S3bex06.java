@@ -2,7 +2,7 @@ package serie3b;
 
 import ch.comem.Clavier;
 
-public class S4ex06 {
+public class S3bex06 {
     public static void main(String[] args) {
         int maxLimit = 90;
         int minLimit = 30;

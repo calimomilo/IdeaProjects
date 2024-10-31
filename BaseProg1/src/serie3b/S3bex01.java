@@ -1,6 +1,6 @@
 package serie3b;
 
-public class S4ex01 {
+public class S3bex01 {
     public static void main(String[] args) {
 
         System.out.println("pairs\n");

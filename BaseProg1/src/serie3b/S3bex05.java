@@ -2,7 +2,7 @@ package serie3b;
 
 import ch.comem.Clavier;
 
-public class S4ex05 {
+public class S3bex05 {
     public static void main(String[] args) {
         int dahu = (int) Math.round(Math.random()*1000 + 1000);
         int counter = 0;

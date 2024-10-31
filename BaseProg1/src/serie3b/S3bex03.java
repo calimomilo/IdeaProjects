@@ -1,6 +1,6 @@
 package serie3b;
 
-public class S4ex03 {
+public class S3bex03 {
     public static void main(String[] args) {
         int pile = 0;
         int face = 0;
