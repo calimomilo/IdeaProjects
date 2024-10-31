@@ -7,8 +7,8 @@ public class S4ex07 {
         String phrase = Clavier.rend_String("Entrez votre phrase : ");
         String[] phrases = phrase.split(" ");
 
-        for (int i = 0; i < phrases.length; i++) {
-            System.out.println(phrases[i]);
+        for (String mot : phrases) {
+            System.out.println(mot);
         }
     }
 }
