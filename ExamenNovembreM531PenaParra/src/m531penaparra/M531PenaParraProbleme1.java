@@ -38,13 +38,17 @@ public class M531PenaParraProbleme1 {
                 }
             } while (currentSticks < 1 || currentSticks > 3 || currentSticks > sticksNumber);
 
+            // diminution du nombre de sticks
             sticksNumber -= currentSticks;
             System.out.println("\nVous avez mangé " + currentSticks + " stick" + (currentSticks == 1? "" : "s")
                     + ". Il reste " + sticksNumber + " stick" + (sticksNumber == 1? "" : "s") +".");
+
+            // changement de joueur
             currentPlayer = currentPlayer.equals(player1)? player2 : player1;
 
         } while (sticksNumber > 0);
 
+        // définition et affichage du gagnant selon le mode de jeu
         String gagnant = lastStickWins
                 ? (currentPlayer.equals(player1)? player2 : player1)
                 : (currentPlayer.equals(player1)? player1 : player2);
