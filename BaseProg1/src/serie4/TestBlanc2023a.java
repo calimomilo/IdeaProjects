@@ -27,7 +27,7 @@ public class TestBlanc2023a {
             if (a > c) {
                 System.out.println("1e distances : " + a + " et " + b + " [km]\n2e distance : " + c + " [km]");
             } else if (a == c) {
-                System.out.println("1e distances : " + a + " " + b + " et " + c + " [km]");
+                System.out.println("1e distances : " + a + ", " + b + " et " + c + " [km]");
             } else {
                 System.out.println("1e distance : " + c + " [km]\n2e distances : " + a + " et " + b + " [km]");
             }
