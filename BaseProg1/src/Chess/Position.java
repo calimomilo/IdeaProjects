@@ -7,6 +7,7 @@ public class Position {
 
     public Position(Chessboard chessboard, String pos) {
         this.chessboard = chessboard;
+        setPosition(pos);
     }
 
     public Chessboard getChessboard() {
