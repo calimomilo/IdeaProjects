@@ -54,7 +54,7 @@ public class Chessboard {
     public void emptyBoard() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                board[i][j] = " ";
+                board[i][j] = "";
             }
         }
     }
@@ -85,8 +85,10 @@ public class Chessboard {
         return s;
     }
 
-    public static void main(String[] args) {
-        Chessboard chess = new Chessboard(Color.BLUE_BACKGROUND_BRIGHT, Color.GREEN_BACKGROUND_BRIGHT);
-        System.out.println(chess);
+    public void placePiece(Piece piece, Position pos) {
+        if (getBoard(pos).isEmpty()) {
+            piece.setPosition(pos);
+            board[pos.getRow()][pos.getCol()] = String.valueOf(piece.getPiece());
+        }
     }
 }
