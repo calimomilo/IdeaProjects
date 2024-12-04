@@ -84,11 +84,4 @@ public class Chessboard {
 
         return s;
     }
-
-    public void placePiece(Piece piece, Position pos) {
-        if (getBoard(pos).isEmpty()) {
-            piece.setPosition(pos);
-            board[pos.getRow()][pos.getCol()] = String.valueOf(piece.getPiece());
-        }
-    }
 }

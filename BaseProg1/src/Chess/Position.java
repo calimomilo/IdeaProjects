@@ -65,7 +65,7 @@ public class Position {
     public void askPosition() {
         boolean success = false;
         do {
-            success = setCoords(Clavier.rend_String("Où placez-vous votre pion ?"));
+            success = setCoords(Clavier.rend_String("Où placez-vous votre pion ? "));
             if (!success) {
                 System.out.println("Saisie invalide.");
             }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Piece {
     private char piece;
     private Position position;
-    private ArrayList<Position> memory = new ArrayList<Position>();
+    private ArrayList<String> memory = new ArrayList<String>();
 
     public Piece(char piece) {
         setPiece(piece);
@@ -29,11 +29,12 @@ public class Piece {
     }
 
     public void setPosition(Position position) {
-        this.position = position;
-        memory.add(position);
+        this.position = new Position(position.getChessboard(), position.toString());
+
+        memory.add(position.toString());
     }
 
-    public ArrayList<Position> getMemory() {
+    public ArrayList<String> getMemory() {
         return memory;
     }
 
@@ -52,7 +53,8 @@ public class Piece {
         return valid;
     }
 
-    public void printMoves() {
+    public byte printMoves() {
+        byte moves = 0;
         Chessboard board = getPosition().getChessboard();
         System.out.print("\t\t");
         for (int i = 0; i < board.getSize(); i++) {
@@ -62,7 +64,8 @@ public class Piece {
         for (int i = 0; i < board.getSize(); i++) {
             System.out.print("\n   " + (8-i) + "\t");
             for (int j = 0; j < board.getSize(); j++) {
-                if (checkMove(i,j)) {
+                if (checkMove(i,j) && board.getBoard()[i][j].isEmpty()) {
+                    moves++;
                     System.out.print(Color.PURPLE_BACKGROUND_BRIGHT + " " + board.getBoard()[i][j] + "\t" + Color.RESET);
                 } else {
                     if ((i+j)%2 == 0) {
@@ -79,13 +82,7 @@ public class Piece {
         for (int i = 0; i < board.getSize(); i++) {
             System.out.print(" " + (char)(65+i) + "\t");
         }
-    }
-
-    public boolean movePiece(Position position) {
-        boolean valid = checkMove(position);
-        if (valid) {
-         setPosition(position);
-        }
-        return valid;
+        System.out.println();
+        return moves;
     }
 }
