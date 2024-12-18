@@ -21,9 +21,8 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        Chessboard chess = new Chessboard(Color.BLUE_BACKGROUND_BRIGHT, Color.GREEN_BACKGROUND_BRIGHT);
-        Piece horse = new Piece('♘');
+    public static void playCavalier(Chessboard chess, Piece horse) {
+
         Position pos = new Position(chess);
         byte moves = 0;
 
@@ -39,9 +38,15 @@ public class Main {
         if (horse.getMemory().size() == 64) {
             System.out.println("Bravo ! Vous avez trouvé une solution au problème du chevalier.\n");
         } else {
-            System.out.println("vous ne pouvez plus vous déplacer !");
+            System.out.println("vous ne pouvez plus vous déplacer ! Vous avez effectué " + horse.getMemory().size() + " mouvements.");
         }
         System.out.println("Votre chemin : " + horse.getMemory());
+    }
 
+    public static void main(String[] args) {
+        Chessboard chess = new Chessboard(Color.BLUE_BACKGROUND_BRIGHT, Color.GREEN_BACKGROUND_BRIGHT);
+        Piece horse = new Piece('♞');
+
+        playCavalier(chess, horse);
     }
 }
