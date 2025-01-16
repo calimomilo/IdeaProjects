@@ -30,6 +30,10 @@ public class Main {
 //
 //        // texte
 //        anastasia.write("Hello World :)");
+//
+//        // popup
+//        BigTurtle.displayPopup("coucou");
+//        BigTurtle.readChar("coucou");
 
         anastasia.turnRight(90);
         anastasia.jumpTo(400,300);
