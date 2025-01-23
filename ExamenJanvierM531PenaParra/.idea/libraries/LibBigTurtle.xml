@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="LibBigTurtle">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../LibBigTurtle" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../LibBigTurtle" recursive="false" />
+  </library>
+</component>

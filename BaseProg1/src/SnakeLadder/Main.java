@@ -57,8 +57,9 @@ public class Main {
         saisieJoueurs(nbrJoueurs, nomJoueurs, ageJoueurs);
         System.out.println();
 
+        // get le joueur le plus jeune
         byte index = 0;
-        for (byte i = 0; i < ageJoueurs.length; i++) {
+        for (byte i = 1; i < ageJoueurs.length; i++) {
             if (ageJoueurs[i] < ageJoueurs[index]) {
                 index = i;
             }
