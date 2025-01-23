@@ -4,9 +4,6 @@ import ch.comem.Clavier;
 import ch.comem.turtle.BigTurtle;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.Arrays;
 import java.util.Random;
 
 
@@ -89,7 +86,7 @@ public class Pendu {
     public static void main(String[] args) {
         BigTurtle annie = new BigTurtle(700, 400, 800, 200, "pendu", Color.WHITE);
         annie.setPenFont(new Font("Courier", Font.PLAIN, 12));
-        String[] mots = {"gourde", "trousse", "voiture", "tortue", "amour", "danser", "cafeine", "histoire"};
+        String[] mots = {"gourde", "trousse", "voiture", "tortue", "amour", "danser", "cafeine", "histoire", "gabor", "pinkas", "application", "nuage", "bouteille"};
 
         Random rand = new Random();
         String strMot = mots[rand.nextInt(mots.length)];
