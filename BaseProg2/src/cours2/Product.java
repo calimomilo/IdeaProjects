@@ -3,10 +3,12 @@ package cours2;
 public class Product {
     private String name;
     private double price;
+    private double shipping;
 
-    public Product(String name, double price) {
-        setName(name);
+    public Product(String name, double price, double shipping) {
+        this.name = name;
         setPrice(price);
+        setShipping(shipping);
     }
 
     public String getName() {
@@ -29,7 +31,19 @@ public class Product {
         }
     }
 
+    public double getShipping() {
+        return shipping;
+    }
+
+    public void setShipping(double shipping) {
+        if (shipping < 0) {
+            System.out.println("prix invalide");
+        } else {
+            this.shipping = shipping;
+        }
+    }
+
     public String toString() {
-        return name + " : " + price;
+        return name + " : " + price + " (" + shipping + ")";
     }
 }

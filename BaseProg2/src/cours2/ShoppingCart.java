@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ShoppingCart {
     private ArrayList<Product> products = new ArrayList<Product>();
     private double totalPrice;
+    private double totalShipping;
 
     /**
      * retourne un String avec une liste formatée des produits
@@ -33,6 +34,7 @@ public class ShoppingCart {
     public void addProduct(Product p) {
         products.add(p);
         totalPrice += p.getPrice();
+        totalShipping += p.getShipping();
     }
 
     /**
@@ -42,13 +44,14 @@ public class ShoppingCart {
     public void removeProduct(Product p) {
         products.remove(p);
         totalPrice -= p.getPrice();
+        totalShipping -= p.getShipping();
     }
 
     /**
      * affiche la liste des produits et le prix total du panier
      */
     public void display() {
-        System.out.println(getProducts() + "Total : " + totalPrice + "\n");
+        System.out.println(getProducts() + "Total : " + (totalPrice + totalShipping) + "\n");
     }
 
     /**
@@ -67,7 +70,8 @@ public class ShoppingCart {
 
             msg += String.format("%.2f", p.getPrice()) + " CHF\n";
         }
-        msg += "Total\t\t" + totalPrice + " CHF\n";
+        msg += "________________________\nPrix\t\t" + totalPrice + " CHF\nLivraison\t" + totalShipping + " CHF\n" +
+                "________________________\nTotal\t\t" + (totalPrice+totalShipping) + " CHF\n\n";
 
         System.out.println(msg);
     }
