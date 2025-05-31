@@ -21,4 +21,14 @@ public class App extends Product {
     public String getDonwloadLink() {
         return donwloadLink;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof App app) {
+            return this.getName().equals(app.getName()) && this.getPrice() == app.getPrice() &&
+                    this.getShipping() == app.getShipping() && this.getVersion().equals(app.getVersion()) &&
+                    this.getDonwloadLink().equals(app.getDonwloadLink());
+        }
+        return false;
+    }
 }

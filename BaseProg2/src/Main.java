@@ -39,5 +39,10 @@ public class Main {
         sc.addProduct(l1);
         sc.display();
         sc.formattedDisplay();
+
+        System.out.println(p1.getCounter());
+        Product p4 = new Product("chocolat", 3.50, 0.5);
+        System.out.println(p1.getCounter());
+        System.out.println(a1.getId());
     }
 }

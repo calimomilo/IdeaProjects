@@ -4,9 +4,13 @@ public class Product {
     private String name;
     private double price;
     private double shipping;
+    private int id;
+    private static int counter;
 
     public Product(String name, double price, double shipping) {
         this.name = name;
+        counter++;
+        this.id = counter;
         setPrice(price);
         setShipping(shipping);
     }
@@ -41,6 +45,14 @@ public class Product {
         } else {
             this.shipping = shipping;
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getCounter() {
+        return counter;
     }
 
     public String toString() {
