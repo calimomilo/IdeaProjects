@@ -9,13 +9,14 @@ import java.util.Map;
 public class Location {
     private final String name;
     private final String description;
-    private final Map<Direction, Location> adjacent = new HashMap<>();
-    private ItemCollection items = new ItemCollection();
-    private boolean locked = false;
+    private final Map<Direction, Location> adjacent;
+    private final ItemCollection items;
+    private boolean locked;
 
-    protected Location(String name, String description, ItemCollection items, boolean locked) {
+    protected Location(String name, String description, HashMap<Direction, Location> adjacent, ItemCollection items, boolean locked) {
         this.name = name;
         this.description = description;
+        this.adjacent = adjacent;
         this.items = items;
         this.locked = locked;
     }
