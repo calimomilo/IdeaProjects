@@ -1,4 +1,7 @@
+package locations;
+
 import items.ItemCollection;
+import utils.Direction;
 
 import java.util.HashMap;
 import java.util.Map;
