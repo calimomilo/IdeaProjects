@@ -35,11 +35,15 @@ public class LocationBuilder {
      * @return the instance of the location being built
      */
     public LocationBuilder connect(Direction out, Direction in, Location loc) {
-        this.adjacent.put(out, loc);
-        // stores the mirror connection to add them during build
-        this.connectedLocations.add(loc);
-        this.connectedLocationDirections.add(in);
-        return this;
+        if (adjacent.containsKey(out)) {
+            throw new IllegalArgumentException(this.name + " already connected through direction " + out);
+        } else {
+            this.adjacent.put(out, loc);
+            // stores the mirror connection to add it during build
+            this.connectedLocations.add(loc);
+            this.connectedLocationDirections.add(in);
+            return this;
+        }
     }
 
     /**
@@ -69,7 +73,11 @@ public class LocationBuilder {
         Location newLoc = new Location(name, description, adjacent, items, locked);
         // adds all mirror connections created
         for (int i = 0; i < connectedLocations.size(); i++) {
-            connectedLocations.get(i).getAdjacent().put(connectedLocationDirections.get(i), newLoc);
+            if (connectedLocations.get(i).getAdjacent().containsKey(connectedLocationDirections.get(i))) {
+                throw new IllegalArgumentException(connectedLocations.get(i).getName() + " already connected through direction " + connectedLocationDirections.get(i));
+            } else {
+                connectedLocations.get(i).getAdjacent().put(connectedLocationDirections.get(i), newLoc);
+            }
         }
         return newLoc;
     }
